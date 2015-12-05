@@ -1,0 +1,5 @@
+project_name: GoDev
+project_root: /go/src
+windows:
+  - editor: vim
+  - shell: zsh
