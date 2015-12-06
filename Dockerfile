@@ -3,7 +3,7 @@ FROM golang
 ENV EDITOR vim
 ENV SHELL zsh
 
-RUN sed -i "s/httpredir\.debian\.org/mirrors\.163\.com/g" /etc/apt/sources.list
+# RUN sed -i "s/httpredir\.debian\.org/mirrors\.163\.com/g" /etc/apt/sources.list
 
 RUN apt-get -q update && \
   apt-get install --no-install-recommends -y --force-yes -q \
@@ -35,8 +35,8 @@ RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 
 RUN gem install tmuxinator
 
-ENV http_proxy xxx 
-ENV https_proxy xxx 
+# ENV http_proxy xxx 
+# ENV https_proxy xxx 
 
 RUN go get github.com/nsf/gocode \
            github.com/tools/godep \
