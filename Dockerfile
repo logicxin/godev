@@ -31,7 +31,7 @@ RUN apt-get -q update && \
 
 RUN curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | /bin/zsh || true
 
-RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+# RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 
 RUN gem install tmuxinator
 
