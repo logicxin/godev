@@ -1,9 +1,14 @@
 FROM golang
 
+RUN mkdir -p ~/tools && \
+    git clone https://github.com/brendangregg/FlameGraph ~/tools/FlameGraph
+
+ENV PATH ~/tools/FlameGraph:$PATH
+
 ENV EDITOR vim
 ENV SHELL zsh
 
-# RUN sed -i "s/httpredir\.debian\.org/mirrors\.163\.com/g" /etc/apt/sources.list
+#RUN sed -i "s/httpredir\.debian\.org/mirrors\.163\.com/g" /etc/apt/sources.list
 
 RUN apt-get -q update && \
   apt-get install --no-install-recommends -y --force-yes -q \
@@ -31,12 +36,12 @@ RUN apt-get -q update && \
 
 RUN curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | /bin/zsh || true
 
-# RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+#RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 
 RUN gem install tmuxinator
 
-# ENV http_proxy xxx 
-# ENV https_proxy xxx 
+ENV http_proxy xxx 
+ENV https_proxy xxx 
 
 RUN go get github.com/nsf/gocode \
            github.com/tools/godep \
