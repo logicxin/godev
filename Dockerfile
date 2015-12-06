@@ -82,6 +82,7 @@ RUN mkdir -p ~/.vim/{autoload,bundle,colors,scripts} && \
     git clone https://github.com/Raimondi/delimitMate ~/.vim/bundle/delimitMate && \
     git clone https://github.com/suan/vim-instant-markdown ~/.vim/bundle/vim-instant-markdown && \
     git clone https://github.com/scrooloose/syntastic ~/.vim/bundle/syntastic && \
+    git clone https://github.com/jgdavey/tslime.vim.git ~/.vim/bundle/tslime.vim && \
     git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 
 RUN cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh
