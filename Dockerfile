@@ -40,8 +40,8 @@ RUN curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/instal
 
 RUN gem install tmuxinator
 
-ENV http_proxy xxx 
-ENV https_proxy xxx 
+#ENV http_proxy xxx 
+#ENV https_proxy xxx 
 
 RUN go get github.com/nsf/gocode \
            github.com/tools/godep \
