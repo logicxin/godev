@@ -66,6 +66,7 @@ RUN go get github.com/nsf/gocode \
 RUN mkdir -p ~/.vim/{autoload,bundle,colors,scripts} && \
     wget -P ~/.vim/autoload "https://tpo.pe/pathogen.vim" && \
     wget -P ~/.vim/colors "https://raw.githubusercontent.com/xlucas/go-vim-install/master/molokai.vim" && \
+    git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar && \
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && \
     git clone git://github.com/tpope/vim-sensible.git ~/.vim/bundle/vim-sensible && \
     git clone https://github.com/Valloric/YouCompleteMe ~/.vim/bundle/YouCompleteMe && \

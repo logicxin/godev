@@ -25,6 +25,18 @@ set hidden
 set cursorline
 set gdefault
 set t_Co=256
+set relativenumber
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set selection=exclusive
+
+" Pathogen
+execute pathogen#infect()
+filetype plugin indent on
+
+" Tagbar plugin
+autocmd VimEnter * nested :TagbarOpen
 
 " Airline plugin
 let g:airline_theme = 'badwolf'
@@ -36,10 +48,6 @@ autocmd Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
 autocmd FileType ruby setl nowrap sw=2 sts=2 et
 autocmd BufWritePost *.go :GoInstall
 autocmd FileType qf wincmd J
-
-" Pathogen
-execute pathogen#infect()
-filetype plugin indent on
 
 " Syntax highlighting
 syntax on
